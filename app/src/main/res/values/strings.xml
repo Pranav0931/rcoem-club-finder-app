@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Club Finder</string>
+
+    <!-- Add these new strings for your detail screen -->
+    <string name="about_the_club">About the Club</string>
+    <string name="leadership">Leadership</string>
+    <string name="contact">Contact</string>
+</resources>

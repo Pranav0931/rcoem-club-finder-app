@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".ui.EventsFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Upcoming Events"
+        android:textAppearance="?attr/textAppearanceHeadline5"
+        android:padding="16dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/events_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/list_item_event"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+</LinearLayout>

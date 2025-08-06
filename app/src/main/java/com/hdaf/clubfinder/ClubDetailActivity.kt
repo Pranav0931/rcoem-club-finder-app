@@ -1,7 +1,9 @@
 package com.hdaf.clubfinder
 
+import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
@@ -11,7 +13,6 @@ class ClubDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_club_detail)
 
-        // Retrieve the club object passed from the previous screen
         val club = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             intent.getParcelableExtra("EXTRA_CLUB", Club::class.java)
         } else {
@@ -19,30 +20,44 @@ class ClubDetailActivity : AppCompatActivity() {
             intent.getParcelableExtra<Club>("EXTRA_CLUB")
         }
 
-        // Find the views in the layout
+        val headerLayout: LinearLayout = findViewById(R.id.detail_header)
         val logoTextView: TextView = findViewById(R.id.detail_logo)
         val fullNameTextView: TextView = findViewById(R.id.detail_full_name)
         val descriptionTextView: TextView = findViewById(R.id.detail_description)
         val leadersTextView: TextView = findViewById(R.id.detail_leaders)
         val contactTextView: TextView = findViewById(R.id.detail_contact)
 
-        // Populate the views with the club's data
         club?.let {
+            // Populate the views with data
             logoTextView.text = it.logo
             fullNameTextView.text = it.fullName
             descriptionTextView.text = it.description
             leadersTextView.text = it.leaders
             contactTextView.text = it.contact
-
-            // Set the title of the activity
             supportActionBar?.title = it.name
+
+            // --- NEW: Apply the club's color ---
+            try {
+                val clubColor = Color.parseColor(it.colorHex)
+                headerLayout.setBackgroundColor(clubColor)
+
+                // Also change the status bar color for a more immersive feel
+                // Create a slightly darker color for the status bar
+                val hsv = FloatArray(3)
+                Color.colorToHSV(clubColor, hsv)
+                hsv[2] *= 0.8f // make it 20% darker
+                window.statusBarColor = Color.HSVToColor(hsv)
+
+            } catch (e: IllegalArgumentException) {
+                // Fallback if the color string is invalid
+                headerLayout.setBackgroundColor(Color.DKGRAY)
+            }
+            // ------------------------------------
         }
 
-        // Enable the back button in the action bar
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
-    // Handle the back button press
     override fun onSupportNavigateUp(): Boolean {
         onBackPressedDispatcher.onBackPressed()
         return true

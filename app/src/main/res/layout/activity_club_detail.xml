@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F8FAFC"
+    android:background="#1C1C1E"
     tools:context=".ClubDetailActivity">
 
     <LinearLayout
@@ -12,9 +12,11 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <!-- This is the header that will change color -->
         <LinearLayout
+            android:id="@+id/detail_header"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="220dp"
             android:background="@color/purple_500"
             android:gravity="center"
             android:orientation="vertical"
@@ -24,7 +26,6 @@
                 android:id="@+id/detail_logo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@android:color/white"
                 android:textSize="80sp"
                 tools:text="🎨" />
 
@@ -43,16 +44,15 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="16dp"
+            android:orientation="vertical">
 
-            <!-- Use string resource here -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/about_the_club"
-                android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -61,23 +61,23 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:lineSpacingExtra="4dp"
+                android:textColor="#E0E0E0"
                 android:textSize="16sp"
                 tools:text="A creative space for painting, sketching, and sculpture. The club hosts annual art exhibitions and workshops to nurture artistic talent among students." />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginBottom="16dp"
                 android:layout_marginTop="16dp"
-                android:background="#E2E8F0" />
+                android:layout_marginBottom="16dp"
+                android:background="#4A4A4A" />
 
-            <!-- Use string resource here -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/leadership"
-                android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -85,23 +85,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:textColor="#E0E0E0"
                 android:textSize="16sp"
                 tools:text="Prof. M. N. Deshpande" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginBottom="16dp"
                 android:layout_marginTop="16dp"
-                android:background="#E2E8F0" />
+                android:layout_marginBottom="16dp"
+                android:background="#4A4A4A" />
 
-            <!-- Use string resource here -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/contact"
-                android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -109,8 +109,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:autoLink="email"
                 android:textSize="16sp"
+                android:autoLink="email"
+                android:textColorLink="#BB86FC"
                 tools:text="arts@rcoem.edu" />
 
         </LinearLayout>

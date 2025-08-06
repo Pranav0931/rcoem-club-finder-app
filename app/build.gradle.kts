@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     id("kotlin-parcelize")
+    id("com.google.gms.google-services") // <-- Add this line for Firebase
 }
 
 android {
@@ -46,4 +47,13 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    // --- Add these lines for Firebase ---
+    // Firebase Bill of Materials (BoM) - This manages library versions for you
+    implementation(platform("com.google.firebase:firebase-bom:33.1.1"))
+
+    // Dependencies for Firebase products
+    implementation("com.google.firebase:firebase-auth") // For Authentication
+    implementation("com.google.firebase:firebase-firestore") // For the Firestore Database
+    // ------------------------------------
 }

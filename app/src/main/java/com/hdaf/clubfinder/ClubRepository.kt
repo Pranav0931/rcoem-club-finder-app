@@ -1,6 +1,12 @@
 package com.hdaf.clubfinder
 
 object ClubRepository {
+    // Define colors for categories
+    private const val COLOR_TECHNICAL = "#4285F4" // Google Blue
+    private const val COLOR_CULTURAL = "#DB4437" // Google Red
+    private const val COLOR_SOCIAL = "#0F9D58"   // Google Green
+    private const val COLOR_SPIRITUAL = "#7E57C2" // Deep Purple
+
     val clubs = listOf(
         Club(
             id = 1,
@@ -9,6 +15,7 @@ object ClubRepository {
             department = "General",
             interest = "Cultural",
             logo = "🎨",
+            colorHex = COLOR_CULTURAL,
             description = "A creative space for painting, sketching, and sculpture. The club hosts annual art exhibitions and workshops to nurture artistic talent among students.",
             leaders = "Prof. M. N. Deshpande",
             contact = "arts@rcoem.edu",
@@ -21,6 +28,7 @@ object ClubRepository {
             department = "Computer Science",
             interest = "Technical",
             logo = "🕵️",
+            colorHex = COLOR_TECHNICAL,
             description = "Focuses on cybersecurity, ethical hacking, and cryptography. The club prepares students for Capture The Flag (CTF) competitions and promotes awareness about digital security.",
             leaders = "Prof. Y. Z. Ahmed",
             contact = "codebreakers@rcoem.edu",
@@ -33,6 +41,7 @@ object ClubRepository {
             department = "General",
             interest = "Cultural",
             logo = "💃",
+            colorHex = COLOR_CULTURAL,
             description = "From classical to hip-hop, this club is for everyone who loves to dance. It provides a platform for students to showcase their talent in various inter-college and intra-college events.",
             leaders = "Ms. A. Chopra",
             contact = "dance@rcoem.edu",
@@ -45,6 +54,7 @@ object ClubRepository {
             department = "Electronics",
             interest = "Technical",
             logo = "🤖",
+            colorHex = COLOR_TECHNICAL,
             description = "Dive deep into the world of microcontrollers, embedded C, and building autonomous robots. The club focuses on hands-on projects and practical learning.",
             leaders = "Dr. B. C. Patel",
             contact = "embedded@rcoem.edu",
@@ -57,6 +67,7 @@ object ClubRepository {
             department = "General",
             interest = "Cultural",
             logo = "🎵",
+            colorHex = COLOR_CULTURAL,
             description = "Brings together musicians and vocalists for jam sessions, band performances, and music theory classes. The club is a hub for all musical activities on campus.",
             leaders = "Prof. O. P. Singh",
             contact = "music@rcoem.edu",
@@ -69,6 +80,7 @@ object ClubRepository {
             department = "General",
             interest = "Cultural",
             logo = "📸",
+            colorHex = COLOR_CULTURAL,
             description = "Capture moments and learn the art of photography. The club organizes regular photo walks, workshops on editing, and exhibitions to showcase student work.",
             leaders = "Mr. D. E. Francis",
             contact = "photography@rcoem.edu",
@@ -81,6 +93,7 @@ object ClubRepository {
             department = "General",
             interest = "Cultural",
             logo = "📚",
+            colorHex = COLOR_CULTURAL,
             description = "A heaven for book lovers. The club holds regular discussions, author talks, poetry slams, and various literary events to promote reading culture.",
             leaders = "Dr. F. G. Mishra",
             contact = "literary@rcoem.edu",
@@ -93,6 +106,7 @@ object ClubRepository {
             department = "Mechanical",
             interest = "Technical",
             logo = "🦾",
+            colorHex = COLOR_TECHNICAL,
             description = "Aims to fuel awareness in the field of Robotics. Students design, build, and program robots for national competitions like Robocon and other tech fests.",
             leaders = "Dr. G. H. Jain",
             contact = "robotics@rcoem.edu",
@@ -105,6 +119,7 @@ object ClubRepository {
             department = "General",
             interest = "Social",
             logo = "🤝",
+            colorHex = COLOR_SOCIAL,
             description = "A service-oriented club focused on community development, leadership skills, and professional networking. Organizes blood donation drives, cleanliness campaigns, etc.",
             leaders = "Dr. Q. R. Joshi",
             contact = "rotaract@rcoem.edu",
@@ -117,6 +132,7 @@ object ClubRepository {
             department = "Mechanical",
             interest = "Technical",
             logo = "🏎️",
+            colorHex = COLOR_TECHNICAL,
             description = "For students passionate about automotive design, manufacturing, and racing. The club participates in national-level competitions like BAJA, SUPRA, and EFFICYCLE.",
             leaders = "Dr. I. J. Reddy",
             contact = "sae@rcoem.edu",
@@ -129,6 +145,7 @@ object ClubRepository {
             department = "General",
             interest = "Spiritual",
             logo = "🧘",
+            colorHex = COLOR_SPIRITUAL,
             description = "Focuses on mindfulness, meditation, and spiritual well-being to help students manage stress and find inner balance through various sessions and talks.",
             leaders = "Prof. H. I. Kumar",
             contact = "spiritual@rcoem.edu",
@@ -141,6 +158,7 @@ object ClubRepository {
             department = "General",
             interest = "Technical",
             logo = "🛠️",
+            colorHex = COLOR_TECHNICAL,
             description = "A multidisciplinary club for all tech enthusiasts. It provides a common platform for interdisciplinary technical activities and projects.",
             leaders = "Dr. S. T. Verma",
             contact = "techclub@rcoem.edu",
@@ -153,6 +171,7 @@ object ClubRepository {
             department = "General",
             interest = "Social",
             logo = "🕊️",
+            colorHex = COLOR_SOCIAL,
             description = "Dedicated to developing student's personality through community service. NSS is a voluntary association of young people in Colleges and Universities.",
             leaders = "Dr. P. Q. Rao",
             contact = "nss@rcoem.edu",
@@ -165,6 +184,7 @@ object ClubRepository {
             department = "General",
             interest = "Technical",
             logo = "🌿",
+            colorHex = COLOR_TECHNICAL,
             description = "Promoting awareness and projects related to green technology, sustainability, and environmental conservation among students and the community.",
             leaders = "Dr. J. K. Lamba",
             contact = "reef@rcoem.edu",

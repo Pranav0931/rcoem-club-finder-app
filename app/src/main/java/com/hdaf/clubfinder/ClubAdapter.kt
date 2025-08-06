@@ -1,22 +1,44 @@
 package com.hdaf.clubfinder
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 
-// The constructor now accepts a lambda function for handling clicks
+// The constructor accepts a list of clubs and a lambda function for handling clicks
 class ClubAdapter(
     private var clubs: List<Club>,
     private val onItemClicked: (Club) -> Unit
 ) : RecyclerView.Adapter<ClubAdapter.ClubViewHolder>() {
 
-    // ViewHolder holds the views for each item in the list
     class ClubViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val logo: TextView = itemView.findViewById(R.id.item_logo)
-        val name: TextView = itemView.findViewById(R.id.item_name)
-        val description: TextView = itemView.findViewById(R.id.item_description)
+        // Get references to the views in the list item layout
+        private val logoCardView: CardView = itemView.findViewById(R.id.logo_card_view)
+        private val logo: TextView = itemView.findViewById(R.id.item_logo)
+        private val name: TextView = itemView.findViewById(R.id.item_name)
+        private val description: TextView = itemView.findViewById(R.id.item_description)
+
+        // Bind data to the views and set the click listener for an item
+        fun bind(club: Club, onItemClicked: (Club) -> Unit) {
+            logo.text = club.logo
+            name.text = club.name
+            description.text = club.description
+
+            // Set the background color with a fallback for safety
+            try {
+                logoCardView.setCardBackgroundColor(Color.parseColor(club.colorHex))
+            } catch (e: IllegalArgumentException) {
+                logoCardView.setCardBackgroundColor(Color.LTGRAY)
+            }
+
+            // Set the click listener for the entire item view
+            itemView.setOnClickListener {
+                onItemClicked(club)
+            }
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ClubViewHolder {
@@ -26,20 +48,12 @@ class ClubAdapter(
 
     override fun onBindViewHolder(holder: ClubViewHolder, position: Int) {
         val club = clubs[position]
-        holder.logo.text = club.logo
-        holder.name.text = club.name
-        // Use the shorter description for the list item
-        holder.description.text = club.description
-
-        // Use the passed-in lambda for the click listener
-        holder.itemView.setOnClickListener {
-            onItemClicked(club)
-        }
+        holder.bind(club, onItemClicked)
     }
 
     override fun getItemCount() = clubs.size
 
-    // Function to update the list of clubs when filtering
+    // Function to update the adapter's data and refresh the list
     fun updateClubs(newClubs: List<Club>) {
         clubs = newClubs
         notifyDataSetChanged()

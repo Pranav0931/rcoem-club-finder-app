@@ -10,7 +10,8 @@ data class Club(
     val fullName: String,
     val department: String,
     val interest: String,
-    val logo: String, // Using emoji for now, can be replaced with drawable IDs
+    val logo: String,
+    val colorHex: String, // <-- ADD THIS LINE
     val description: String,
     val leaders: String,
     val contact: String,

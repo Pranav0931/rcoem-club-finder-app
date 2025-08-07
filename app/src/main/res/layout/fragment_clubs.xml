@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Discover Clubs"
+        android:text="@string/discover_clubs"
         android:textSize="28sp"
         android:textStyle="bold"
         android:textColor="?android:attr/textColorPrimary"
@@ -25,7 +25,8 @@
         android:layout_margin="16dp"
         app:queryHint="Search by name or keyword..."
         app:iconifiedByDefault="false"
-        android:background="@drawable/search_view_background"/>
+        android:background="@drawable/search_view_background"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/clubs_recycler_view"

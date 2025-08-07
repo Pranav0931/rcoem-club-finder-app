@@ -29,9 +29,8 @@ class MainActivity : AppCompatActivity() {
             when (item.itemId) {
                 R.id.nav_clubs -> selectedFragment = ClubsFragment()
                 R.id.nav_announcements -> selectedFragment = AnnouncementsFragment()
-                R.id.nav_chat -> selectedFragment = ChatFragment() // Add this case for the new Chat button
+                R.id.nav_chat -> selectedFragment = ChatFragment()
                 R.id.nav_events -> selectedFragment = EventsFragment()
-                // The case for nav_blueprint has been removed
             }
             if (selectedFragment != null) {
                 replaceFragment(selectedFragment)

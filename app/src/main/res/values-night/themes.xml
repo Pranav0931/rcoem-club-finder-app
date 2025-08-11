@@ -1,7 +1,21 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+    <!-- Base application theme for DARK mode. -->
     <style name="Base.Theme.ClubFinder" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <!-- This line applies our custom style to all SearchViews in the app -->
+        <item name="searchViewStyle">@style/CustomSearchViewStyle</item>
+    </style>
+
+    <style name="Theme.ClubFinder" parent="Base.Theme.ClubFinder" />
+
+    <!-- Custom style for the SearchView in DARK mode -->
+    <style name="CustomSearchViewStyle" parent="Widget.AppCompat.SearchView">
+        <!-- Sets the custom dark background -->
+        <item name="queryBackground">@drawable/search_view_background_dark</item>
+        <!-- Removes the default underline -->
+        <item name="android:background">@null</item>
+        <!-- Sets the text color to white for readability -->
+        <item name="android:textColor">@android:color/white</item>
+        <!-- Sets the hint text color -->
+        <item name="android:textColorHint">#BDBDBD</item>
     </style>
 </resources>

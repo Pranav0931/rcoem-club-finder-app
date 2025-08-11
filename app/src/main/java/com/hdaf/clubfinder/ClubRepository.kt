@@ -16,8 +16,8 @@ object ClubRepository {
             interest = "Cultural",
             logo = "🎨",
             colorHex = COLOR_CULTURAL,
-            description = "A creative space for painting, sketching, and sculpture. The club hosts annual art exhibitions and workshops to nurture artistic talent among students.",
-            leaders = "Prof. M. N. Deshpande",
+            description = "The Art Club was established on 5 August 2022. It provides a supportive and collaborative environment for members to explore their creative talents, learn new techniques, and showcase their artwork.",
+            leaders = "Prof. Lokesh Heda (ENU)\nProf. Yoginee Pethe (MCA)",
             contact = "arts@rcoem.edu",
             keywords = "art paint sketch drawing"
         ),

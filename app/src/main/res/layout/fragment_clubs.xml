@@ -18,14 +18,15 @@
         android:paddingEnd="16dp"
         android:paddingTop="16dp"/>
 
+    <!-- The background is now applied directly here -->
     <androidx.appcompat.widget.SearchView
         android:id="@+id/search_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        android:background="@drawable/search_view_background_dark"
         app:queryHint="Search by name or keyword..."
         app:iconifiedByDefault="false"
-        android:background="@drawable/search_view_background"
         style="@style/CustomSearchViewStyle" />
 
     <androidx.recyclerview.widget.RecyclerView

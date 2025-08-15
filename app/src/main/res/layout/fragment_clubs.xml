@@ -18,16 +18,24 @@
         android:paddingEnd="16dp"
         android:paddingTop="16dp"/>
 
-    <!-- The background is now applied directly here -->
-    <androidx.appcompat.widget.SearchView
-        android:id="@+id/search_view"
+    <!-- FIX: Wrap the SearchView in a CardView to handle the background -->
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:background="@drawable/search_view_background_dark"
-        app:queryHint="Search by name or keyword..."
-        app:iconifiedByDefault="false"
-        style="@style/CustomSearchViewStyle" />
+        app:cardCornerRadius="24dp"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="?attr/colorSurfaceVariant">
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:queryHint="Search by name or keyword..."
+            app:iconifiedByDefault="false"
+            style="@style/CustomSearchViewStyle" />
+
+    </androidx.cardview.widget.CardView>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/clubs_recycler_view"

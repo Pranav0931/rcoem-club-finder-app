@@ -16,7 +16,7 @@ object ClubRepository {
             interest = "Cultural",
             logo = "🎨",
             colorHex = COLOR_CULTURAL,
-            description = "The Art Club was established on 5 August 2022. It provides a supportive and collaborative environment for members to explore their creative talents, learn new techniques, and showcase their artwork.",
+            description = "The Art Club provides a supportive and collaborative environment for members to explore their creative talents, learn new techniques, and showcase their artwork through various events and workshops.",
             leaders = "Prof. Lokesh Heda (ENU)\nProf. Yoginee Pethe (MCA)",
             contact = "arts@rcoem.edu",
             keywords = "art paint sketch drawing"
@@ -29,10 +29,10 @@ object ClubRepository {
             interest = "Technical",
             logo = "🕵️",
             colorHex = COLOR_TECHNICAL,
-            description = "Focuses on cybersecurity, ethical hacking, and cryptography. The club prepares students for Capture The Flag (CTF) competitions and promotes awareness about digital security.",
+            description = "Aims to establish a coding culture on campus, reaching every student passionate about coding through competitions, open-source projects, and workshops on the latest technologies.",
             leaders = "Prof. Y. Z. Ahmed",
             contact = "codebreakers@rcoem.edu",
-            keywords = "cybersecurity hacking ctf"
+            keywords = "coding development blockchain ctf"
         ),
         Club(
             id = 3,
@@ -42,10 +42,23 @@ object ClubRepository {
             interest = "Cultural",
             logo = "💃",
             colorHex = COLOR_CULTURAL,
-            description = "From classical to hip-hop, this club is for everyone who loves to dance. It provides a platform for students to showcase their talent in various inter-college and intra-college events.",
-            leaders = "Ms. A. Chopra",
+            description = "Active in various cultural events like Aaruni and Pratishruti, the club covers diverse dance styles including classical, Bollywood, and hip-hop, nurturing talent for inter-college competitions.",
+            leaders = "Prof. Devishree Naidu (CSE)\nProf. Sunita Dhote (MBA)",
             contact = "dance@rcoem.edu",
             keywords = "dance hip-hop classical"
+        ),
+        Club(
+            id = 15,
+            name = "Drama Club",
+            fullName = "Drama Club",
+            department = "General",
+            interest = "Cultural",
+            logo = "🎭",
+            colorHex = COLOR_CULTURAL,
+            description = "Provides a platform for budding actors, scriptwriters, and directors. The club organizes drama workshops and stages performances like 'ROLE NO.' and 'QIRDAAR' for various college events.",
+            leaders = "Prof. Akanksha P. Deshpande (Mentor)\nProf. Snehal Laddha (ENU)",
+            contact = "drama@rcoem.edu",
+            keywords = "drama theatre acting script qirdaar"
         ),
         Club(
             id = 4,
@@ -55,8 +68,8 @@ object ClubRepository {
             interest = "Technical",
             logo = "🤖",
             colorHex = COLOR_TECHNICAL,
-            description = "Dive deep into the world of microcontrollers, embedded C, and building autonomous robots. The club focuses on hands-on projects and practical learning.",
-            leaders = "Dr. B. C. Patel",
+            description = "Provides space and infrastructure for technical minds to carry out embedded projects in fields like automotive, robotics, and IoT for various national-level competitions.",
+            leaders = "Prof. R. A. Deshmukh",
             contact = "embedded@rcoem.edu",
             keywords = "robotics embedded systems iot"
         ),
@@ -68,8 +81,8 @@ object ClubRepository {
             interest = "Cultural",
             logo = "🎵",
             colorHex = COLOR_CULTURAL,
-            description = "Brings together musicians and vocalists for jam sessions, band performances, and music theory classes. The club is a hub for all musical activities on campus.",
-            leaders = "Prof. O. P. Singh",
+            description = "Started in 1988, this club is a platform for students to showcase their talent in vocal and instrumental music through performances, competitions, and jam sessions.",
+            leaders = "Prof. Charanjeet Singh Dadiyala (CSU)\nKanak Wadhwani (MBA)",
             contact = "music@rcoem.edu",
             keywords = "music band sing instruments"
         ),
@@ -81,8 +94,8 @@ object ClubRepository {
             interest = "Cultural",
             logo = "📸",
             colorHex = COLOR_CULTURAL,
-            description = "Capture moments and learn the art of photography. The club organizes regular photo walks, workshops on editing, and exhibitions to showcase student work.",
-            leaders = "Mr. D. E. Francis",
+            description = "An aesthetic art club established in 2015 to promote amateur and professional photography among students by covering various campus events and organizing workshops.",
+            leaders = "Prof. Lokesh Heda (ENU)\nProf. Yoginee Pethe (MCA)",
             contact = "photography@rcoem.edu",
             keywords = "photography camera photo"
         ),
@@ -94,8 +107,8 @@ object ClubRepository {
             interest = "Cultural",
             logo = "📚",
             colorHex = COLOR_CULTURAL,
-            description = "A heaven for book lovers. The club holds regular discussions, author talks, poetry slams, and various literary events to promote reading culture.",
-            leaders = "Dr. F. G. Mishra",
+            description = "A forum for students with a passion for literature to discuss ideas, hone articulation skills, and engage with differing viewpoints. The club values freedom of expression and open-mindedness.",
+            leaders = "Shantanu Kulkarni (MUE)\nPratishruti Singh (Humanities)",
             contact = "literary@rcoem.edu",
             keywords = "books reading literature"
         ),
@@ -107,8 +120,8 @@ object ClubRepository {
             interest = "Technical",
             logo = "🦾",
             colorHex = COLOR_TECHNICAL,
-            description = "Aims to fuel awareness in the field of Robotics. Students design, build, and program robots for national competitions like Robocon and other tech fests.",
-            leaders = "Dr. G. H. Jain",
+            description = "Aims to fuel awareness in the field of Robotics. The club consists of self-motivated students who learn, share, and grow by participating in national competitions like E-yantra and ROBOCON.",
+            leaders = "Ashlesh Jaiswal (ECU)\nPankaj Joshi (ENU)",
             contact = "robotics@rcoem.edu",
             keywords = "robotics automation mechanical"
         ),
@@ -120,7 +133,7 @@ object ClubRepository {
             interest = "Social",
             logo = "🤝",
             colorHex = COLOR_SOCIAL,
-            description = "A service-oriented club focused on community development, leadership skills, and professional networking. Organizes blood donation drives, cleanliness campaigns, etc.",
+            description = "A service-oriented club focused on community development, leadership skills, and professional networking. Organizes events like blood donation drives and cleanliness campaigns.",
             leaders = "Dr. Q. R. Joshi",
             contact = "rotaract@rcoem.edu",
             keywords = "social service community volunteering"
@@ -128,14 +141,14 @@ object ClubRepository {
         Club(
             id = 10,
             name = "SAE India Club",
-            fullName = "Society of Automotive Engineers",
+            fullName = "Society of Automotive Engineers – RBU Collegiate Club",
             department = "Mechanical",
             interest = "Technical",
             logo = "🏎️",
             colorHex = COLOR_TECHNICAL,
-            description = "For students passionate about automotive design, manufacturing, and racing. The club participates in national-level competitions like BAJA, SUPRA, and EFFICYCLE.",
+            description = "A premier student-led club focused on innovation in automotive engineering. Members design, build, and race vehicles for competitions like BAJA SAE, SUPRA SAE, and Efficycle.",
             leaders = "Dr. I. J. Reddy",
-            contact = "sae@rcoem.edu",
+            contact = "sae@rbunagpur.in",
             keywords = "automotive engineering baja supra"
         ),
         Club(
@@ -146,8 +159,8 @@ object ClubRepository {
             interest = "Spiritual",
             logo = "🧘",
             colorHex = COLOR_SPIRITUAL,
-            description = "Focuses on mindfulness, meditation, and spiritual well-being to help students manage stress and find inner balance through various sessions and talks.",
-            leaders = "Prof. H. I. Kumar",
+            description = "Discover. Connect. Reflect. The Spiritual Club offers a safe space for students to explore spiritual beliefs through interfaith dialogue, mindfulness, meditation, and workshops.",
+            leaders = "Dr. Bhalchandra Madhao Hardas",
             contact = "spiritual@rcoem.edu",
             keywords = "meditation yoga peace"
         ),
@@ -159,8 +172,8 @@ object ClubRepository {
             interest = "Technical",
             logo = "🛠️",
             colorHex = COLOR_TECHNICAL,
-            description = "A multidisciplinary club for all tech enthusiasts. It provides a common platform for interdisciplinary technical activities and projects.",
-            leaders = "Dr. S. T. Verma",
+            description = "Launched in 2015, this club provides a common platform for interdisciplinary technical activities, aiming to strengthen students by integrating their skills in various fields of Engineering & Technology.",
+            leaders = "Prof. Prashant B. Shiwalkar (Mentor)\nAshlesh Jaiswal (ECU)",
             contact = "techclub@rcoem.edu",
             keywords = "technology projects general"
         ),
@@ -172,10 +185,10 @@ object ClubRepository {
             interest = "Social",
             logo = "🕊️",
             colorHex = COLOR_SOCIAL,
-            description = "Dedicated to developing student's personality through community service. NSS is a voluntary association of young people in Colleges and Universities.",
-            leaders = "Dr. P. Q. Rao",
+            description = "Motto: “NOT ME, BUT YOU”\n\nA government public service program aimed at developing a student’s personality through hands-on community service, ensuring the needy get help to enhance their standard of living.",
+            leaders = "Dr. Amit Anurag (Program Officer)",
             contact = "nss@rcoem.edu",
-            keywords = "nss social service volunteering"
+            keywords = "nss social service community volunteering"
         ),
         Club(
             id = 14,

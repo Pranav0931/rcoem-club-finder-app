@@ -1,0 +1,5 @@
+<resources>
+    <!-- This file is for defining specific, reusable styles for individual UI components. -->
+    <!-- The main application theme styles have been moved to themes.xml to resolve the duplication error. -->
+
+</resources>

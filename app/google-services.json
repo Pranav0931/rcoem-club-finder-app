@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "845351253589",
+    "project_id": "rcoem-club-finder",
+    "storage_bucket": "rcoem-club-finder.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:845351253589:android:e0c652c8cdfebea72146dc",
+        "android_client_info": {
+          "package_name": "com.hdaf.clubfinder"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXcNi9zHwuQd93DnXFr4F1vVGJHFAZ1m0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

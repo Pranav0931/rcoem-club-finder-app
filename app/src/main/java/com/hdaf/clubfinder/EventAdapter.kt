@@ -5,13 +5,18 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import java.text.SimpleDateFormat
+import java.util.Locale
 
-class EventAdapter(private val events: List<Event>) : RecyclerView.Adapter<EventAdapter.EventViewHolder>() {
+class EventAdapter(private var events: List<Event>) :
+    RecyclerView.Adapter<EventAdapter.EventViewHolder>() {
 
     class EventViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val title: TextView = itemView.findViewById(R.id.event_title)
-        val clubName: TextView = itemView.findViewById(R.id.event_club_name)
-        val details: TextView = itemView.findViewById(R.id.event_details)
+        val eventName: TextView = itemView.findViewById(R.id.event_name_text)
+        val clubName: TextView = itemView.findViewById(R.id.event_club_name_text)
+        val date: TextView = itemView.findViewById(R.id.event_date_text)
+        val time: TextView = itemView.findViewById(R.id.event_time_text)
+        val venue: TextView = itemView.findViewById(R.id.event_venue_text)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventViewHolder {
@@ -22,10 +27,17 @@ class EventAdapter(private val events: List<Event>) : RecyclerView.Adapter<Event
 
     override fun onBindViewHolder(holder: EventViewHolder, position: Int) {
         val event = events[position]
-        holder.title.text = event.title
-        holder.clubName.text = event.club
-        holder.details.text = "${event.date} • ${event.time} • ${event.venue}"
+        holder.eventName.text = event.eventName
+        holder.clubName.text = "Hosted by ${event.clubName}"
+        holder.date.text = event.date
+        holder.time.text = event.time
+        holder.venue.text = event.venue
     }
 
     override fun getItemCount() = events.size
+
+    fun updateEvents(newEvents: List<Event>) {
+        events = newEvents
+        notifyDataSetChanged()
+    }
 }

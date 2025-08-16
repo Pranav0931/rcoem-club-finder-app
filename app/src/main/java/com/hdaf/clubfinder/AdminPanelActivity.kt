@@ -22,49 +22,96 @@ class AdminPanelActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         db = FirebaseFirestore.getInstance()
 
-        val titleEditText = findViewById<TextInputEditText>(R.id.announcement_title_edit_text)
-        val clubNameEditText = findViewById<TextInputEditText>(R.id.announcement_club_name_edit_text)
-        val descriptionEditText = findViewById<TextInputEditText>(R.id.announcement_description_edit_text)
-        val postButton = findViewById<Button>(R.id.post_announcement_button)
+        // Announcement Views
+        val announcementTitleEditText = findViewById<TextInputEditText>(R.id.announcement_title_edit_text)
+        val announcementClubNameEditText = findViewById<TextInputEditText>(R.id.announcement_club_name_edit_text)
+        val announcementDescEditText = findViewById<TextInputEditText>(R.id.announcement_description_edit_text)
+        val postAnnouncementButton = findViewById<Button>(R.id.post_announcement_button)
+
+        // Event Views
+        val eventNameEditText = findViewById<TextInputEditText>(R.id.event_name_edit_text)
+        val eventClubNameEditText = findViewById<TextInputEditText>(R.id.event_club_name_edit_text)
+        val eventDateEditText = findViewById<TextInputEditText>(R.id.event_date_edit_text)
+        val eventTimeEditText = findViewById<TextInputEditText>(R.id.event_time_edit_text)
+        val eventVenueEditText = findViewById<TextInputEditText>(R.id.event_venue_edit_text)
+        val postEventButton = findViewById<Button>(R.id.post_event_button)
+
+        // Other Views
         val logoutButton = findViewById<Button>(R.id.logout_button)
 
-        postButton.setOnClickListener {
-            val title = titleEditText.text.toString().trim()
-            val clubName = clubNameEditText.text.toString().trim()
-            val description = descriptionEditText.text.toString().trim()
+        // --- Logic for Posting Announcements ---
+        postAnnouncementButton.setOnClickListener {
+            val title = announcementTitleEditText.text.toString().trim()
+            val clubName = announcementClubNameEditText.text.toString().trim()
+            val description = announcementDescEditText.text.toString().trim()
 
             if (title.isEmpty() || clubName.isEmpty() || description.isEmpty()) {
-                Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Please fill all announcement fields", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            // Create a data object for the announcement
             val announcement = hashMapOf(
                 "title" to title,
                 "clubName" to clubName,
                 "description" to description,
-                "timestamp" to Date() // To sort announcements by time
+                "timestamp" to Date()
             )
 
-            // Add a new document with a generated ID to the "announcements" collection
             db.collection("announcements")
                 .add(announcement)
                 .addOnSuccessListener {
                     Toast.makeText(this, "Announcement posted successfully", Toast.LENGTH_SHORT).show()
-                    // Clear the fields after posting
-                    titleEditText.text?.clear()
-                    clubNameEditText.text?.clear()
-                    descriptionEditText.text?.clear()
+                    announcementTitleEditText.text?.clear()
+                    announcementClubNameEditText.text?.clear()
+                    announcementDescEditText.text?.clear()
                 }
                 .addOnFailureListener { e ->
-                    Toast.makeText(this, "Error posting announcement: ${e.message}", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Error: ${e.message}", Toast.LENGTH_LONG).show()
                 }
         }
 
+        // --- Logic for Posting Events ---
+        postEventButton.setOnClickListener {
+            val eventName = eventNameEditText.text.toString().trim()
+            val clubName = eventClubNameEditText.text.toString().trim()
+            val date = eventDateEditText.text.toString().trim()
+            val time = eventTimeEditText.text.toString().trim()
+            val venue = eventVenueEditText.text.toString().trim()
+
+            if (eventName.isEmpty() || clubName.isEmpty() || date.isEmpty() || time.isEmpty() || venue.isEmpty()) {
+                Toast.makeText(this, "Please fill all event fields", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            val event = Event(
+                eventName = eventName,
+                clubName = clubName,
+                date = date,
+                time = time,
+                venue = venue,
+                description = ""
+            )
+
+            db.collection("events")
+                .add(event)
+                .addOnSuccessListener {
+                    Toast.makeText(this, "Event posted successfully", Toast.LENGTH_SHORT).show()
+                    eventNameEditText.text?.clear()
+                    eventClubNameEditText.text?.clear()
+                    eventDateEditText.text?.clear()
+                    eventTimeEditText.text?.clear()
+                    eventVenueEditText.text?.clear()
+                }
+                .addOnFailureListener { e ->
+                    Toast.makeText(this, "Error: ${e.message}", Toast.LENGTH_LONG).show()
+                }
+        }
+
+
+        // --- Logic for Logout ---
         logoutButton.setOnClickListener {
             auth.signOut()
             Toast.makeText(this, "Logged out", Toast.LENGTH_SHORT).show()
-            // Go back to MainActivity and clear all previous activities
             val intent = Intent(this, MainActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)

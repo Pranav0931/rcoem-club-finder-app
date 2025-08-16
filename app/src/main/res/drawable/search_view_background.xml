@@ -6,7 +6,7 @@
     <!-- A transparent background color to remove the grey bar -->
     <solid android:color="@android:color/transparent" />
 
-    <!-- Rounded corners -->
+    <!-- Rounded corners of better view -->
     <corners android:radius="24dp" />
 
 </shape>

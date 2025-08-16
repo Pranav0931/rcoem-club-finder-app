@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Defines the background for the SearchView in DARK mode -->
+<!-- Transparent background for the SearchView -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
 
-    <!-- A dark grey background that's slightly lighter than the main window -->
-    <solid android:color="#3C3C3C" />
+    <!-- A transparent background color to remove the grey bar -->
+    <solid android:color="@android:color/transparent" />
 
-    <!-- Rounded corners for the search bar -->
+    <!-- Rounded corners -->
     <corners android:radius="24dp" />
+
 </shape>

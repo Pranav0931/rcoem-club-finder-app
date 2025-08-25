@@ -56,4 +56,7 @@ dependencies {
     implementation("com.google.firebase:firebase-auth") // For Authentication
     implementation("com.google.firebase:firebase-firestore") // For the Firestore Database
     // ------------------------------------
+    // --- ADD THIS LINE FOR PUSH NOTIFICATIONS ---
+    implementation("com.google.firebase:firebase-messaging")
+    // -------------------------------------------
 }

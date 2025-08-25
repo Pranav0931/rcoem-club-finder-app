@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_admin_login"
+            android:icon="@drawable/ic_baseline_login_24"
+            android:title="Admin Login" />
+        <item
+            android:id="@+id/nav_theme_switch"
+            android:icon="@drawable/ic_baseline_dark_mode_24"
+            android:title="Switch Theme" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_contact_us"
+                android:icon="@drawable/ic_baseline_contact_support_24"
+                android:title="Contact Us" />
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_baseline_share_24"
+                android:title="Share App" />
+        </menu>
+    </item>
+
+</menu>

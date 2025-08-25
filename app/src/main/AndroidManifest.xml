@@ -13,29 +13,28 @@
         android:theme="@style/Theme.ClubFinder"
         tools:targetApi="31">
 
-        <!-- This is the declaration for the detail screen that was missing -->
-        <activity
-            android:name=".ClubDetailActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".AdminPanelActivity"
-            android:exported="false" />
-        <activity
-            android:name=".RegisterActivity"
-            android:exported="false" />
-        <activity
-            android:name=".LoginActivity"
-            android:exported="false" />
+        <!-- ... your existing Activity declarations ... -->
+        <activity android:name=".ClubDetailActivity" android:exported="false" />
+        <activity android:name=".AdminPanelActivity" android:exported="false" />
+        <activity android:name=".RegisterActivity" android:exported="false" />
+        <activity android:name=".LoginActivity" android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- ADD THIS SERVICE DECLARATION FOR PUSH NOTIFICATIONS -->
+        <service
+            android:name=".MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

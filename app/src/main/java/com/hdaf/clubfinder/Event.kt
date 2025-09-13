@@ -3,7 +3,7 @@ package com.hdaf.clubfinder
 import com.google.firebase.firestore.ServerTimestamp
 import java.util.Date
 
-// This data class defines the structure for an event object
+// The empty constructor is required for Firestore's automatic data mapping
 data class Event(
     val eventName: String = "",
     val clubName: String = "",
@@ -11,5 +11,6 @@ data class Event(
     val time: String = "",
     val venue: String = "",
     val description: String = "",
-    @ServerTimestamp val timestamp: Date? = null // Firestore uses this to order events
+    val eventType: String = "Activity", // New field: "Activity", "Interview", "Announcement"
+    @ServerTimestamp val timestamp: Date? = null
 )

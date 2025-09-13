@@ -1,25 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="?android:attr/colorBackground"
+    android:background="#212121"
     tools:context=".ui.EventsFragment">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Upcoming Events"
-        android:textSize="28sp"
+        android:text="Events Calendar"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
         android:textStyle="bold"
-        android:textColor="?android:attr/textColorPrimary"
-        android:padding="16dp"/>
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/events_recycler_view"
+    <com.applandeo.materialcalendarview.CalendarView
+        android:id="@+id/calendarView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:listitem="@layout/list_item_event"/>
+        android:layout_height="wrap_content"
+        app:headerColor="@color/purple_500"
+        app:todayLabelColor="@color/purple_200"
+        app:selectionColor="@color/purple_700"
+        app:daysLabelsColor="@android:color/white"
+        app:anotherMonthsDaysLabelsColor="#8AFFFFFF" />
 
 </LinearLayout>

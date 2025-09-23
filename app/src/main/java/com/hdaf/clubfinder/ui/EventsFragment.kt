@@ -31,6 +31,7 @@ class EventsFragment : Fragment() {
     }
 
     private fun observeViewModel() {
+        // Observes the LiveData from the ViewModel and updates the calendar dots
         viewModel.calendarEventDots.observe(viewLifecycleOwner) { eventDays ->
             calendarView.setEvents(eventDays)
         }
@@ -53,6 +54,7 @@ class EventsFragment : Fragment() {
         })
     }
 
+    // Helper function to normalize a Date for consistent comparisons
     private fun getNormalizedDate(date: Date): Date {
         val calendar = Calendar.getInstance()
         calendar.time = date

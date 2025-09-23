@@ -5,28 +5,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#212121"
+    android:background="?android:colorBackground"
     tools:context=".ui.EventsFragment">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="16dp"
         android:text="Events Calendar"
-        android:textColor="@android:color/white"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"/>
+        android:textColor="?android:textColorPrimary"
+        android:gravity="center" />
 
     <com.applandeo.materialcalendarview.CalendarView
         android:id="@+id/calendarView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:headerColor="@color/purple_500"
-        app:todayLabelColor="@color/purple_200"
-        app:selectionColor="@color/purple_700"
-        app:daysLabelsColor="@android:color/white"
-        app:anotherMonthsDaysLabelsColor="#8AFFFFFF" />
+        app:headerLabelColor="@android:color/white"
+        app:todayLabelColor="@color/purple_700"
+        app:selectionColor="@color/purple_200"
+        app:selectionLabelColor="@android:color/white"
+        app:daysLabelsColor="?android:textColorSecondary"
+        app:anotherMonthsDaysLabelsColor="#BDBDBD" />
 
 </LinearLayout>
+

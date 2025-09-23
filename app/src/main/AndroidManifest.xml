@@ -15,7 +15,7 @@
         android:theme="@style/Theme.ClubFinder"
         tools:targetApi="31">
 
-        <!-- ... your existing Activity declarations ... -->
+        <!-- App Activities -->
         <activity android:name=".ClubDetailActivity" android:exported="false" />
         <activity android:name=".AdminPanelActivity" android:exported="false" />
         <activity android:name=".RegisterActivity" android:exported="false" />
@@ -29,7 +29,7 @@
             </intent-filter>
         </activity>
 
-        <!-- ADD THIS SERVICE DECLARATION FOR PUSH NOTIFICATIONS -->
+        <!-- Firebase Cloud Messaging Service for Push Notifications -->
         <service
             android:name=".MyFirebaseMessagingService"
             android:exported="false">
@@ -40,3 +40,4 @@
     </application>
 
 </manifest>
+

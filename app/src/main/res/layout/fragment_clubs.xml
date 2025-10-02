@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="?android:colorBackground"
     tools:context=".ui.ClubsFragment">
 
     <TextView
@@ -13,35 +14,84 @@
         android:text="@string/discover_clubs"
         android:textSize="28sp"
         android:textStyle="bold"
-        android:textColor="?android:attr/textColorPrimary"
+        android:textColor="?android:textColorPrimary"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
-        android:paddingTop="16dp"/>
+        android:paddingTop="16dp" />
 
-    <!-- FIX: Wrap the SearchView in a CardView to handle the background -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         app:cardCornerRadius="24dp"
-        app:cardElevation="0dp"
-        app:cardBackgroundColor="?attr/colorSurfaceVariant">
+        app:cardElevation="0dp">
 
         <androidx.appcompat.widget.SearchView
             android:id="@+id/search_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            style="@style/CustomSearchViewStyle"
             app:queryHint="Search by name or keyword..."
-            app:iconifiedByDefault="false"
-            style="@style/CustomSearchViewStyle" />
-
+            app:iconifiedByDefault="false" />
     </androidx.cardview.widget.CardView>
+
+    <!-- ADDED CHIPGROUP FOR FILTERING -->
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chip_group_filter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="12dp"
+        app:singleSelection="true">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_all"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="All"
+            android:checked="true" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_technical"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Technical" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_cultural"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cultural" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_social"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Social" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_spiritual"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Spiritual" />
+    </com.google.android.material.chip.ChipGroup>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/clubs_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:paddingTop="8dp"
+        android:clipToPadding="false"
         tools:listitem="@layout/list_item_club" />
 
 </LinearLayout>

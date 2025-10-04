@@ -1,0 +1,8 @@
+<!-- Orange dot for Activities -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <solid android:color="#F4B400" />
+    <size
+        android:width="8dp"
+        android:height="8dp" />
+</shape>

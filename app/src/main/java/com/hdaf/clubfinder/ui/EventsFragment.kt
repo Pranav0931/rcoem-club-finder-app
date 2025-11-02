@@ -12,6 +12,10 @@ import com.hdaf.clubfinder.R
 import java.util.Calendar
 import java.util.Date
 
+/**
+ * EventsFragment displays a calendar of all college events.
+ * Dates with events are highlighted. Clicking a date shows event details.
+ */
 class EventsFragment : Fragment() {
 
     private lateinit var calendarView: CalendarView
@@ -30,23 +34,26 @@ class EventsFragment : Fragment() {
         return view
     }
 
+    /**
+     * Observes LiveData for calendar event dots and updates the calendar.
+     */
     private fun observeViewModel() {
-        // Observes the LiveData from the ViewModel and updates the calendar dots
         viewModel.calendarEventDots.observe(viewLifecycleOwner) { eventDays ->
             calendarView.setEvents(eventDays)
         }
     }
 
+    /**
+     * Sets up listener for calendar day clicks.
+     * Shows event details for the selected day in a bottom sheet.
+     */
     private fun setupCalendarListener() {
-        // This explicit listener resolves the type mismatch error
         calendarView.setOnDayClickListener(object : OnDayClickListener {
             override fun onDayClick(eventDay: com.applandeo.materialcalendarview.EventDay) {
                 val clickedDate = getNormalizedDate(eventDay.calendar.time)
-                // Safely gets the events for the clicked date from the ViewModel
                 val eventsForDay = viewModel.eventsByDate.value?.get(clickedDate) ?: emptyList()
 
                 if (eventsForDay.isNotEmpty()) {
-                    // Creates and shows the bottom sheet with the event details
                     val bottomSheet = DayDetailsBottomSheetFragment.newInstance(eventDay.calendar, eventsForDay)
                     bottomSheet.show(childFragmentManager, bottomSheet.tag)
                 }
@@ -54,7 +61,9 @@ class EventsFragment : Fragment() {
         })
     }
 
-    // Helper function to normalize a Date for consistent comparisons
+    /**
+     * Helper function to normalize a Date for consistent comparisons.
+     */
     private fun getNormalizedDate(date: Date): Date {
         val calendar = Calendar.getInstance()
         calendar.time = date
@@ -65,4 +74,3 @@ class EventsFragment : Fragment() {
         return calendar.time
     }
 }
-
